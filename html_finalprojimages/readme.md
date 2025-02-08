@@ -1,0 +1,6 @@
+this directory has all images used in final project![icons8-visual-studio-code-2019-48](https://github.com/user-attachments/assets/3d2d2f8f-b8a4-4027-b540-1595f551caef)
+![icons8-javascript-48](https://github.com/user-attachments/assets/86683a35-a199-4b75-89a8-fabbfe076a8f)
+![icons8-html-48](https://github.com/user-attachments/assets/e67f1d4b-8188-4e7c-bce6-b44d218ef4e9)
+![icons8-home-48](https://github.com/user-attachments/assets/7ff3bdb1-5cc7-4d3c-bfb2-228263cbdd6d)
+![icons8-css-48](https://github.com/user-attachments/assets/c8db3fd0-2430-4957-b89f-125d0ecb4dc4)
+![7729_2bnm_220905](https://github.com/user-attachments/assets/d0c58808-0686-4c97-b722-6b44cbe57661)
