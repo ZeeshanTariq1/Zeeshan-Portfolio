@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script>
+        function onclickhover() {
+            
+            let details = document.getElementsByClassName("detail");
+
+            
+            for (let i = 0; i < details.length; i++) {
+                details[i].style.fontFamily = "Arial";
+                details[i].style.color = "gray";
+                details[i].style.fontStyle = "italic";
+            }
+        }
+        function onclickhoverback() {
+            
+            let details = document.getElementsByClassName("detail");
+
+            
+            for (let i = 0; i < details.length; i++) {
+                details[i].style.fontFamily = "sans-serif"; 
+            details[i].style.color = "white";
+            details[i].style.fontStyle = "normal";
+            }
+        }
+        function addRecommendation(){
+            let inputname = document.getElementById("nametext").value;
+            let recommendationtext = document.getElementById("recommendationtext").value;
+
+           
+    if (inputname.trim() === "" || recommendationtext.trim() === "") {
+        alert("Please enter both name and recommendation!");
+        return;
+    }
+
+    
+    let divBox = document.createElement("p");
+    divBox.classList.add("recommendation-box");
+    
+    
+    divBox.innerHTML = `<strong>${inputname}:</strong> ${recommendationtext}`;
+
+    
+    document.querySelector(".boxesofrecommendations").appendChild(divBox);
+
+    
+    document.getElementById("nametext").value = "";
+    document.getElementById("recommendationtext").value = "";
+    
+    alert("Recommendation Added Sucessfully");
+        }
+
+        function ontop(){
+            window.scrollTo({top:0,behavior:"smooth"})
+        }
+    </script>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: beige;
+        }
+        .homeicon{
+            position: fixed;
+            bottom: 20px;
+            left: 1100px;
+            cursor: pointer;
+        }
+        .homeicon img{
+            height: 50px;
+            width: 40px;
+            z-index: 1px;
+        }
+        .nav {
+            width: 1250px;
+            height: 100px;
+            border: 2px solid black;
+            display: flex;
+            gap: 50px;
+            background-color: black;
+            color: white;
+        }
+        .nav img{
+            
+            height: 60px;
+            width: 60px;
+            position: relative;
+            align-self: center;
+            left: 80px;
+        }
+        .nav a{
+            color: white;
+        }
+        .nav a:hover{
+            color: gray;
+        }
+        .name {
+            align-content: center;
+            text-align: center;
+            font-size: larger;
+            width: 450px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            height: 100%;
+            
+        }
+        .detail {
+            cursor: pointer;
+            align-content: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+        }
+        .namesection{
+            width: 1250px;
+            height: 300px;
+            background-color: orange;
+
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            display: flex;
+            justify-content:left;
+            gap: 200px;
+
+
+            
+        }
+        .image{
+            width: 400px;
+            height: 280px;
+            text-align: center;
+            
+            
+            
+
+        }
+        .image img{
+            width: 300px;
+            height:280px;
+        }
+        .skills{
+            width: 1250px;
+            height: 360px;
+            background-color: whitesmoke;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            
+            
+        }
+        .skill{
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            text-align: center;
+            opacity: 1;
+            font-size: larger;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            overflow-wrap: break-word;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); 
+            transform: translateY(-10px);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        
+            
+        }
+        .skill img{
+            align-self: center;
+        }
+        .skills h1{
+            position: relative;
+            bottom: 100px;
+            font-size:xx-large;
+            right: 60px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .Projects{
+            width: 1250px;
+            min-height: 300px;
+            
+            background-color: orange;
+            display: flex;
+            
+            
+            flex-direction: column;
+           
+
+        }
+        .projectdetail{
+            padding: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
+        .Recommendation{
+            width: 1250px;
+            min-height: 300px;
+            background-color: gray;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .Recommendation input.nametext{
+            width: 300px;
+            position: relative;
+            left: 50px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            
+        }
+        .Recommendation input.recommendation{
+            width: 500px;
+            height: 200px;
+            position: relative;
+            left: 50px;
+        }
+        .Recommendation button{
+            height: 30px;
+            width: 70px;
+            align-self: center;
+            position: relative;
+            bottom: 50px;
+            color: black;
+            background-color: gray;
+            
+
+        }
+        .Recommendation button:hover{
+            color: white;
+        }
+        .boxesofrecommendations{
+            max-width: 1250px;
+            min-height: 200px;
+            
+            display: flex;
+            flex-direction: row;
+
+        }
+        .recommendation-box {
+            align-items: normal;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+
+            width: 300px;
+            height: 100px;
+            border-radius: 5px;
+            
+        }
+        
+
+
+    </style>
+
+
+
+   
+</head>
+<body>
+    <section class="nav">
+        <div class="homeicon"><img src="icons8-home-48.png" alt="" onclick="ontop()"></div>
+        <div class="name">Zeeshan Tariq <br> zeetariq765@gmail.com</div>
+        <div class="detail" onmouseover="onclickhover()" onmouseleave="onclickhoverback()"><a href="#aboutme">About Me</a></div>
+        <div class="detail" onmouseover="onclickhover()" onmouseleave="onclickhoverback()"><a href="#skills">Skills</a></div>
+        <div class="detail" onmouseover="onclickhover()" onmouseleave="onclickhoverback()"><a href="#projects">Projects</a></div>
+        <div class="detail" onmouseover="onclickhover()" onmouseleave="onclickhoverback()"><a href="#recommendations">Recommendations</a></div>
+    </section>
+    <section class="namesection" id="aboutme">
+        <div class="image">
+            <img src="7729_2bnm_220905.jpg" alt="">
+        </div>
+        <div>
+            <h1>Hi I am Zeeshan</h1>
+            <p>I am a passionate web developer skilled in HTML,CSS, JavaScript, and modern web technologies.</p>
+        </div>
+    </section>
+    <section class="skills" id="skills">
+        <h1>Skills</h1>
+        <div class="skill"><img src="icons8-html-48.png" alt=""><br> Html <br> 1 year Experience</div>
+        <div class="skill"><img src="icons8-css-48.png" alt=""><br> Css <br>1 Year Experience</div>
+        <div class="skill"><img src="icons8-javascript-48.png" alt=""><br> JavaScript <br> 6 Months Experience</div>
+        <div class="skill"><img src="icons8-visual-studio-code-2019-48.png" alt=""><br> Visual Studio <br> 2 year Experience</div>
+
+    </section>
+    <section class="Projects" id="projects">
+    <div class="projectdetail"><h1>Banking System</h1>
+        * This was my first Project</div>
+    <div class="projectdetail"><h1>Cinema System</h1>* This is what i done during second semester of my undergraduate degree</div>
+    <div class="projectdetail"><h1>Social Media App</h1>* This is what i have built during recent time</div>
+    </section>
+    <section class="Recommendation" id="recommendations">
+        <h1>Leave a Recommendation</h1>
+        <input type="text" placeholder="Name" class="nametext" id="nametext">
+        <input type="text" placeholder="Recommendation" class="recommendation" id="recommendationtext">
+        <button onclick="addRecommendation()"> Submit </button>
+    </section>
+    <section class="boxesofrecommendations">
+        <p class="recommendation-box"><strong>Ali:</strong> Zeeshan is a great developer!</p>
+    <p class="recommendation-box"><strong>Ahmed:</strong> Very skilled and hardworking.</p>
+    <p class="recommendation-box"><strong>Fatima:</strong> Highly recommended for web projects.</p>
+    </section>
+</body>
+</html>
